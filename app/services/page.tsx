@@ -87,8 +87,8 @@ export default function ServicesPage() {
             ].map((service, index) => (
               <div key={index} className="grid gap-6 md:grid-cols-2 md:gap-12">
                 <div className="flex flex-col justify-center space-y-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-burgundy-100">
-                    <service.icon className="h-6 w-6 text-burgundy-700" />
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
+                    <service.icon className="h-6 w-6 text-red-700" />
                   </div>
                   <div className="space-y-2">
                     <h2 className="text-3xl font-bold">{service.title}</h2>
@@ -97,14 +97,14 @@ export default function ServicesPage() {
                   <ul className="grid gap-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-burgundy-700" />
+                        <CheckCircle2 className="h-4 w-4 text-red-700" />
                         <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <div>
                     <Link href={service.href}>
-                      <Button className="mt-4 bg-royalblue-700 hover:bg-royalblue-800">
+                      <Button className="mt-4 bg-blue-700 hover:bg-blue-800">
                         Learn More <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
@@ -137,7 +137,7 @@ export default function ServicesPage() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button className="bg-royalblue-700 hover:bg-royalblue-800">Contact Our Team</Button>
+              <Button className="bg-blue-700 hover:bg-blue-800">Contact Our Team</Button>
             </div>
           </div>
         </div>

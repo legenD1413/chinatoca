@@ -40,3 +40,27 @@ model Contact {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// 邮箱设置表
+model EmailSetting {
+  id        Int      @id @default(autoincrement())
+  type      String // 'QUOTE' 或 'CONTACT'
+  toEmails  String // 用逗号分隔的收件人邮箱列表
+  ccEmails  String? // 用逗号分隔的抄送邮箱列表
+  bccEmails String? // 用逗号分隔的密送邮箱列表
+  subject   String // 邮件主题
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Postmark设置表
+model PostmarkSetting {
+  id            Int      @id @default(autoincrement())
+  apiToken      String // Postmark API Token
+  fromEmail     String // 默认发件人邮箱
+  replyToEmail  String? // 默认回复邮箱
+  messageStream String   @default("outbound") // 消息流名称
+  enabled       Boolean  @default(true) // 是否启用邮件发送
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}

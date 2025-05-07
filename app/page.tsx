@@ -24,12 +24,12 @@ export default function Home() {
               <div className="relative w-[120px] h-[60px]">
                 <Image src="/ku-logo2.png" alt="ChinaTo.ca Logo" fill className="object-contain" />
               </div>
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">ChinaTo.ca</h1>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white drop-shadow-md">ChinaTo.ca</h1>
             </div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl">
-              The <span className="text-blue-500">Fulfillment Solution</span> That Knows China-Canada Shipping Best
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-white drop-shadow-md">
+              The <span className="text-blue-500 drop-shadow-md">Fulfillment Solution</span> That Knows China-Canada Shipping Best
             </h2>
-            <p className="mx-auto max-w-[800px] text-gray-300 md:text-lg">
+            <p className="mx-auto max-w-[800px] text-white md:text-lg drop-shadow-md">
               Every business shipping from China to Canada needs a reliable partner. Our diverse team with extensive
               logistics experience can help fulfill your shipping needs and deliver your products better.
             </p>
@@ -76,7 +76,7 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Fast & Affordable</h2>
-              <p className="max-w-[600px] text-gray-500 md:text-lg">
+              <p className="max-w-[600px] text-gray-700 md:text-lg font-medium">
                 Our optimized shipping routes and strategic partnerships with carriers allow us to offer the fastest
                 delivery times at the most competitive rates in the industry.
               </p>
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Complete Fulfillment Solutions</h2>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-medium">
                 End-to-end logistics services tailored for businesses shipping from China to Canada
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function Home() {
                   <service.icon className="h-6 w-6" />
                 </div>
                 <h3 className="mb-2 text-xl font-bold">{service.title}</h3>
-                <p className="mb-4 flex-1 text-gray-500">{service.description}</p>
+                <p className="mb-4 flex-1 text-gray-700">{service.description}</p>
                 <Link
                   href={service.href}
                   className="mt-auto inline-flex items-center text-sm font-medium text-blue-700 hover:underline"
@@ -177,7 +177,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Seamless Ecommerce Integrations</h2>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-medium">
                 Connect your online store directly to our fulfillment system for automated order processing and
                 real-time inventory management.
               </p>
@@ -224,7 +224,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">How It Works</h2>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-medium">
                 Simple, transparent process from pickup in China to delivery in Canada
               </p>
             </div>
@@ -273,7 +273,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">What Our Clients Say</h2>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-medium">
                 Trusted by businesses across Canada
               </p>
             </div>
@@ -303,7 +303,7 @@ export default function Home() {
               },
             ].map((testimonial, index) => (
               <div key={index} className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <p className="mb-4 text-gray-600">"{testimonial.quote}"</p>
+                <p className="mb-4 text-gray-700">{testimonial.quote}</p>
                 <div className="flex items-center">
                   <Image
                     src={testimonial.image || "/api/placeholder?width=60&height=60"}

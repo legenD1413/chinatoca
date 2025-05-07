@@ -4,7 +4,7 @@ import { useState } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ListIcon, FileTextIcon, LogOut } from "lucide-react"
+import { ChevronLeft, ListIcon, FileTextIcon, LogOut, MailIcon, Settings, SendIcon, InboxIcon } from "lucide-react"
 
 export default function AdminLayout({
   children,
@@ -28,7 +28,7 @@ export default function AdminLayout({
     <div className="min-h-screen bg-gray-100">
       <div className="flex min-h-screen">
         {/* 侧边栏 */}
-        <div className={`bg-gray-800 text-white transition-all duration-300 ${collapsed ? "w-16" : "w-64"}`}>
+        <div className={`bg-gray-800 text-white transition-all duration-300 ${collapsed ? "w-16" : "w-64"} relative`}>
           <div className="flex items-center justify-between p-4 border-b border-gray-700">
             {!collapsed && <h1 className="text-xl font-bold">管理后台</h1>}
             <Button
@@ -79,19 +79,60 @@ export default function AdminLayout({
                   {!collapsed && <span>联系信息管理</span>}
                 </Link>
               </li>
+              <li>
+                <Link href="/admin/emails" 
+                  className={`flex items-center p-2 rounded-md transition-colors ${
+                    pathname.includes("/admin/emails") 
+                      ? "bg-gray-700" 
+                      : "hover:bg-gray-700"
+                  }`}
+                >
+                  <InboxIcon className="h-5 w-5 mr-3" />
+                  {!collapsed && <span>邮件管理</span>}
+                </Link>
+              </li>
+              <li className="pt-2 pb-2 border-t border-gray-700">
+                <div className={`px-3 py-1 text-xs text-gray-400 ${collapsed ? "hidden" : ""}`}>
+                  设置
+                </div>
+              </li>
+              <li>
+                <Link href="/admin/settings/email" 
+                  className={`flex items-center p-2 rounded-md transition-colors ${
+                    pathname.includes("/admin/settings/email") 
+                      ? "bg-gray-700" 
+                      : "hover:bg-gray-700"
+                  }`}
+                >
+                  <MailIcon className="h-5 w-5 mr-3" />
+                  {!collapsed && <span>邮箱通知设置</span>}
+                </Link>
+              </li>
+              <li>
+                <Link href="/admin/settings/postmark" 
+                  className={`flex items-center p-2 rounded-md transition-colors ${
+                    pathname.includes("/admin/settings/postmark") 
+                      ? "bg-gray-700" 
+                      : "hover:bg-gray-700"
+                  }`}
+                >
+                  <SendIcon className="h-5 w-5 mr-3" />
+                  {!collapsed && <span>Postmark设置</span>}
+                </Link>
+              </li>
+              
+              {/* 退出登录按钮作为导航项 */}
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className={`flex items-center w-full p-2 rounded-md text-left text-gray-400 hover:text-white hover:bg-gray-700 transition-colors ${collapsed ? "justify-center" : ""}`}
+                >
+                  <LogOut className="h-5 w-5 mr-3" />
+                  {!collapsed && <span>退出登录</span>}
+                </button>
+              </li>
             </ul>
           </nav>
-          
-          <div className="absolute bottom-0 w-full border-t border-gray-700 p-4">
-            <Button 
-              variant="ghost" 
-              className="flex items-center text-gray-300 hover:text-white w-full justify-start px-2"
-              onClick={handleLogout}
-            >
-              <LogOut className="h-5 w-5 mr-3" />
-              {!collapsed && <span>退出登录</span>}
-            </Button>
-          </div>
         </div>
         
         {/* 主内容区域 */}

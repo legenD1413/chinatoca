@@ -40,3 +40,44 @@ model Contact {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// 邮箱设置表
+model EmailSetting {
+  id        Int      @id @default(autoincrement())
+  type      String   // 'QUOTE' 或 'CONTACT'
+  toEmails  String   // 用逗号分隔的收件人邮箱列表
+  ccEmails  String?  // 用逗号分隔的抄送邮箱列表
+  bccEmails String?  // 用逗号分隔的密送邮箱列表
+  subject   String   // 邮件主题
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Postmark设置表
+model PostmarkSetting {
+  id              Int      @id @default(autoincrement())
+  apiToken        String   // Postmark API Token
+  fromEmail       String   // 默认发件人邮箱
+  replyToEmail    String?  // 默认回复邮箱
+  messageStream   String   @default("outbound") // 消息流名称
+  enabled         Boolean  @default(true) // 是否启用邮件发送
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// 邮件日志表
+model EmailLog {
+  id              Int      @id @default(autoincrement())
+  messageId       String?  // Postmark返回的邮件ID
+  fromEmail       String   // 发件人邮箱
+  toEmails        String   // 收件人邮箱
+  ccEmails        String?  // 抄送邮箱
+  bccEmails       String?  // 密送邮箱
+  subject         String   // 邮件主题
+  htmlBody        String?  // HTML格式内容
+  textBody        String?  // 纯文本格式内容
+  status          String   // 发送状态：'success'或'failed'
+  errorMessage    String?  // 如果发送失败，错误信息
+  emailType       String   // 邮件类型：'quote'或'contact'或'system'等
+  sentAt          DateTime @default(now()) // 发送时间
+}
