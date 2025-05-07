@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-royalblue-800">Services</h3>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-blue-800">Services</h3>
             <ul className="space-y-2">
               {[
                 { name: "Crowdfunding Fulfillment", href: "/services/crowdfunding-fulfillment" },
@@ -35,7 +35,7 @@ export default function Footer() {
                 { name: "Dropshipping Fulfillment", href: "/services/dropshipping-fulfillment" },
               ].map((service) => (
                 <li key={service.name}>
-                  <Link href={service.href} className="text-sm text-gray-600 hover:text-royalblue-700">
+                  <Link href={service.href} className="text-sm text-gray-600 hover:text-blue-700">
                     {service.name}
                   </Link>
                 </li>
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-royalblue-800">Company</h3>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-blue-800">Company</h3>
             <ul className="space-y-2">
               {[
                 { name: "How it Works", href: "/how-it-works" },
@@ -55,7 +55,7 @@ export default function Footer() {
                 { name: "Referral Program", href: "/referral-program" },
               ].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-sm text-gray-600 hover:text-royalblue-700">
+                  <Link href={item.href} className="text-sm text-gray-600 hover:text-blue-700">
                     {item.name}
                   </Link>
                 </li>
@@ -64,18 +64,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-royalblue-800">Contact</h3>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-blue-800">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-burgundy-700" />
+                <MapPin className="h-5 w-5 text-red-700" />
                 <span className="text-sm text-gray-600">123 Logistics Way, Vancouver, BC, Canada</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-burgundy-700" />
+                <Phone className="h-5 w-5 text-red-700" />
                 <span className="text-sm text-gray-600">+1 (604) 123-4567</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-burgundy-700" />
+                <Mail className="h-5 w-5 text-red-700" />
                 <span className="text-sm text-gray-600">info@chinato.ca</span>
               </li>
             </ul>

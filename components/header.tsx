@@ -109,7 +109,7 @@ export default function Header() {
                       <Link
                         key={service.title}
                         href={service.href}
-                        className="text-gray-600 hover:text-royalblue-700"
+                        className="text-gray-600 hover:text-blue-700"
                         onClick={() => setIsOpen(false)}
                       >
                         {service.title}
@@ -132,7 +132,7 @@ export default function Header() {
         </div>
 
         <div className="hidden lg:block">
-          <Button className="bg-royalblue-700 hover:bg-royalblue-800">
+          <Button className="bg-blue-700 hover:bg-blue-800">
             <Link href="/get-a-quote">Get a Quote</Link>
           </Button>
         </div>
@@ -182,14 +182,14 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none rounded-md p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-royalblue-700 focus:bg-gray-100 focus:text-royalblue-700",
+            "block select-none rounded-md p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-blue-700 focus:bg-gray-100 focus:text-blue-700",
             className,
           )}
           {...props}
         >
           <div className="flex items-center gap-3 mb-2">
-            <div className="rounded-full bg-royalblue-100 p-2">
-              <Icon className="h-5 w-5 text-royalblue-700" />
+            <div className="rounded-full bg-blue-100 p-2">
+              <Icon className="h-5 w-5 text-blue-700" />
             </div>
             <div className="text-base font-medium leading-none">{title}</div>
           </div>
